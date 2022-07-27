@@ -181,5 +181,7 @@ while (bandera):
         *               BOOTCAMP: FUNDAMENTOS PYTHON              *
         *               MODULO I                                  *
         *                                                         *
+        *               HASTA LA PROXIMA !!!                      *
+        *                                                         *
         ***********************************************************
         '''+'\n')

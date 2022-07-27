@@ -1,5 +1,6 @@
 # Iniciando el proyecto de calculadora IMC
-El primer dia realice los ingresos de datos, valide y puse mensajes de alerta para ver que posible error se daba al ingresar variables, tuve problemas con los valores en numeros ya que tuve que investigar una forma de confirmar que lso valores eran numeros, posteriormente fue mas sencilla la toma de los datos.
+El primer dia realice los ingresos de datos, valide y puse mensajes de alerta para ver que posible error se daba al ingresar variables, tuve problemas con los valores en numeros ya que tuve que investigar una forma de confirmar que los valores eran numeros, posteriormente fue mas sencilla la toma de los datos.
+No se trabajo bajo el esquema apellido paterno y materno, ya que en muchas personas solo tienen un apellido, por eso use la notacion primer y segundo apellido.
 El segundo dia procedi a realziar la formula y armar las condiciones para el resultado de acuerdo al IMC, los valores y descripciones se tomaron de Wikipedia, agregue un mensaje de salida con los datos que se ingresaron asi como su IMC y su resultado en cuanto a tipo.
 adicionalmente inclui un menu en caso que se quiera repertir el calculo para otra persona.
 
