@@ -1,1 +1,6 @@
 # Iniciando el proyecto de calculadora IMC
+El primer dia realice los ingresos de datos, valide y puse mensajes de alerta para ver que posible error se daba al ingresar variables, tuve problemas con los valores en numeros ya que tuve que investigar una forma de confirmar que lso valores eran numeros, posteriormente fue mas sencilla la toma de los datos.
+El segundo dia procedi a realziar la formula y armar las condiciones para el resultado de acuerdo al IMC, los valores y descripciones se tomaron de Wikipedia, agregue un mensaje de salida con los datos que se ingresaron asi como su IMC y su resultado en cuanto a tipo.
+adicionalmente inclui un menu en caso que se quiera repertir el calculo para otra persona.
+
+El bootcamp me perrmite revisar la informacion cuando quiero y puedo, ademas de repetir lo que realmente necesito. Por otro lado me parece muy interesante que los programas en python se puedan ejecutar directamente en el PC, despues del curso me surgieron varias ideas para poder implementar acciones que me ayuden en lo cotidiano.
