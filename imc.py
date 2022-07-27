@@ -4,23 +4,19 @@
 
 #   En este proyecto la especificacion de apellido paterno o materno fue reemplazado por primer y segundo apellido ya que existen personas que pueden tener un unico apellido
 
-from pickle import TRUE
-
-
-bandera = 1
-bandera = bool(bandera)
-
-while (bandera == 1):
+bandera = True
+while (bandera):
 
     # Menu de inicio
 
-    print ('*'*32)
+    print ('\n\n'+'*'*32)
     print ('*'+' '*30+'*')
     print ('*'+' '*10+'BIENVENIDO'+' '*10+'*')
+    print ('*'+' '*7+'CALCULADORA IMC'+' '*8+'*')
     print ('*'+' '*4+'INGRESE LOS SIGUIENTES'+' '*4+'*')
     print ('*'+' '*12+'DATOS:'+' '*12+'*')
     print ('*'+' '*30+'*')
-    print ('*'*32)
+    print ('*'*32+'\n\n')
 
     auxiliar = True
     
@@ -140,43 +136,50 @@ while (bandera == 1):
     imc = peso / talla**2
     imc = float(imc)
     if(imc >= 0 and imc <= 15.99):
-        resultado = ' DELGADEZ SEVERA '
+        resultado = 'DELGADEZ SEVERA'
     elif(imc >= 16 and imc <= 16.99):
         resultado = 'DELGADEZ MODERADA'
     elif(imc >= 17 and imc <= 18.49):
-        resultado = '  DELGADEZ LEVE  '
+        resultado = 'DELGADEZ LEVE'
     elif(imc >= 18.5 and imc <= 24.99):
-        resultado = '     NORMAL      '
+        resultado = 'NORMAL'
     elif(imc >= 25 and imc <= 29.99):
-        resultado = '   PREOBESIDAD   '
+        resultado = 'PREOBESIDAD'
     elif(imc >= 30 and imc <= 34.99):
-        resultado = '  OBESIDAD LEVE  '
+        resultado = 'OBESIDAD LEVE'
     elif(imc >= 35 and imc <= 39.99):
-        resultado = ' OBESIDAD MEDIA  '
+        resultado = 'OBESIDAD MEDIA'
     elif(imc >= 40):
-        resultado = 'OBESIDAD MÓRBIDA '
+        resultado = 'OBESIDAD MÓRBIDA'
 
     #Emision de resultado
-    print('*'*33)
+    print('\n\n'+'*'*41)
     print('*\t\t'+'RESULTADO'+'\t\t*')
-    print('*'*33+'\n\n')
+    print('*'*41+'\n\n')
 
     print('ESTIMAD@',nombre.upper(),pri_apellido.upper(),seg_apellido.upper(),'.\nUSTED TIENE',edad,'AÑOS.\nUSTED MIDE',talla,'MTS.\nSU PESO ES DE',peso,'KG.')
     print (f'SU IMC ES: {imc:.2f}, - {resultado}')
 
-    fin = True
-    while(fin):
-        print('''
+    #Menu de para salir o repetir
+
+    print('\n'+'''
+    ***********************************************************
+    *                                                         *
+    *               INGRESE SI PARA OTRO CALCULO              *
+    *               CUALQUIER TEXTO PARA SALIR                *
+    *                                                         *
+    ***********************************************************
+    '''+'\n')
+    valor = str(input('VALOR:'))
+    valor = valor.upper()
+    if(valor != 'SI'):
+        bandera = False
+        print('\n'+'''
         ***********************************************************
         *                                                         *
-        *               DESEA REALIZAR OTRO CALCULO               *
-        *                        INGRESE SI                       *
+        *               PROYECTO: CALCULADORA DE IMC              *
+        *               BOOTCAMP: FUNDAMENTOS PYTHON              *
+        *               MODULO I                                  *
         *                                                         *
         ***********************************************************
-        ''')
-        valor = str(input('VALOR:'))
-        valor = valor.upper()
-        if(valor == 'SI'):
-            fin = False
-        else:
-            bandera = 0
+        '''+'\n')
