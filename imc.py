@@ -4,10 +4,13 @@
 
 #   En este proyecto la especificacion de apellido paterno o materno fue reemplazado por primer y segundo apellido ya que existen personas que pueden tener un unico apellido
 
+from pickle import TRUE
+
+
 bandera = 1
 bandera = bool(bandera)
 
-while (bandera):
+while (bandera == 1):
 
     # Menu de inicio
 
@@ -89,12 +92,13 @@ while (bandera):
             res = True
         except ValueError:
             res = False
-            print ('No es numero')
+            print ('NO ES UN VALOR VALIDO.')
 
         if(res and edad > 0):
             auxiliar = False
         else:
-            print ('* NO ES UN NUMERO ENTERO')
+            print ('* NO ES UN NUMERO ENTERO.')
+            print ('* LOS VALORES NO DEBEN SER NEGATIVOS.')
     
     #   While para el ingreso y validacion de peso
 
@@ -105,11 +109,74 @@ while (bandera):
             res = True
         except ValueError:
             res = False
-            print ('No es numero')
+            print ('NO ES UN VALOR VALIDO.')
 
         if(res and peso > 0):
             auxiliar = False
         else:
-            print ('* NO ES UN NUMERO ENTEROD')
+            print ('* REVISE QUE USE PUNTO EN LUGAR DE COMA.')
+            print ('* LOS VALORES NO DEBEN SER NEGATIVOS.')
 
-    bandera = 0
+    #   While para el ingreso y validacion de talla
+
+    auxiliar = True
+    while(auxiliar):
+        try:
+            talla = float(input('INGRESE SU TALLA EN MTS.: '))
+            res = True
+        except ValueError:
+            res = False
+            print ('NO ES UN VALOR VALIDO.')
+
+        if(res and talla > 0):
+            auxiliar = False
+        else:
+            print ('* REVISE QUE USE PUNTO EN LUGAR DE COMA.')
+            print ('* LOS VALORES NO DEBEN SER NEGATIVOS.')
+
+    #Procesando de informacion
+    #Valores tomados de Wikipedia
+
+    imc = peso / talla**2
+    imc = float(imc)
+    if(imc >= 0 and imc <= 15.99):
+        resultado = ' DELGADEZ SEVERA '
+    elif(imc >= 16 and imc <= 16.99):
+        resultado = 'DELGADEZ MODERADA'
+    elif(imc >= 17 and imc <= 18.49):
+        resultado = '  DELGADEZ LEVE  '
+    elif(imc >= 18.5 and imc <= 24.99):
+        resultado = '     NORMAL      '
+    elif(imc >= 25 and imc <= 29.99):
+        resultado = '   PREOBESIDAD   '
+    elif(imc >= 30 and imc <= 34.99):
+        resultado = '  OBESIDAD LEVE  '
+    elif(imc >= 35 and imc <= 39.99):
+        resultado = ' OBESIDAD MEDIA  '
+    elif(imc >= 40):
+        resultado = 'OBESIDAD MÓRBIDA '
+
+    #Emision de resultado
+    print('*'*33)
+    print('*\t\t'+'RESULTADO'+'\t\t*')
+    print('*'*33+'\n\n')
+
+    print('ESTIMAD@',nombre.upper(),pri_apellido.upper(),seg_apellido.upper(),'.\nUSTED TIENE',edad,'AÑOS.\nUSTED MIDE',talla,'MTS.\nSU PESO ES DE',peso,'KG.')
+    print (f'SU IMC ES: {imc:.2f}, - {resultado}')
+
+    fin = True
+    while(fin):
+        print('''
+        ***********************************************************
+        *                                                         *
+        *               DESEA REALIZAR OTRO CALCULO               *
+        *                        INGRESE SI                       *
+        *                                                         *
+        ***********************************************************
+        ''')
+        valor = str(input('VALOR:'))
+        valor = valor.upper()
+        if(valor == 'SI'):
+            fin = False
+        else:
+            bandera = 0
